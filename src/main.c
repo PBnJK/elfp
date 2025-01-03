@@ -14,7 +14,8 @@
 static void _usage(void) {
 	printf("usage: elfp [OPTIONS] (file)\n");
 	printf("       -a, --all....... Print all information\n");
-	printf("       -h, --header.... Print the Entry Header\n");
+	printf("       -h, --help...... Prints this message\n");
+	printf("       -H, --header.... Print the Entry Header\n");
 	printf("       -p, --program... Print the Program Header\n");
 	printf("       -s, --section... Print the Section Header\n");
 }
@@ -71,7 +72,11 @@ int main(int argc, char *argv[]) {
 		CHECK('a', "all") {
 			flags = ELF_DUMP_ALL;
 		}
-		else CHECK('h', "header") {
+		else CHECK('h', "help") {
+			_usage();
+			exit(EXIT_SUCCESS);
+		}
+		else CHECK('H', "header") {
 			flags |= ELF_DUMP_EH;
 		}
 		else CHECK('p', "program") {

@@ -19,5 +19,4 @@ add_executable(
 
 target_include_directories(elfp PRIVATE ${PROJECT_SOURCE_DIR}/inc)
 
-target_compile_options(elfp PRIVATE -std=c99 -Wall -Wextra -pedantic )
-target_link_options(elfp PRIVATE -fsanitize=address)
+target_compile_options(elfp PRIVATE -std=c99 -Wall -Wextra -pedantic)

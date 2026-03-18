@@ -106,7 +106,7 @@ int main(int argc, char *argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	ELF *elf = elfParseFile("./elfp");
+	ELF *elf = elfParseFile(file);
 	if( elf == NULL ) {
 		return EXIT_FAILURE;
 	}

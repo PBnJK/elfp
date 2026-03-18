@@ -65,6 +65,9 @@ static void _freeSHEntry(ELF_SHEntry *sh);
 
 ELF *elfParseFile(const char *FILEPATH) {
 	FP *fp = utilReadFile(FILEPATH);
+	if( fp == NULL ) {
+		return NULL;
+	}
 
 	return elfParse(fp);
 }
